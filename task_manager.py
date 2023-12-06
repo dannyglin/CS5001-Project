@@ -26,16 +26,19 @@ class TaskManager:
         self.tasks.append({"task": task, "priority": priority, "due_date": due_date})
 
 
-    def remove_task(self, index):
+    def remove_task_by_index(self, index):
         """
         Removes a task from the task list based on the provided index.
 
         Arguments:
         index (int): The index of the task to be removed from the task list.
         """
-        del self.tasks[index]
+        if 0 <= index < len(self.tasks):
+            del self.tasks[index]
+        else:
+            print(f"Invalid index '{index}' for task removal.")
 
-
+        
     def get_tasks(self):
         """
         Retrieves the list of tasks stored in the TaskManager.
