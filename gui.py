@@ -26,10 +26,13 @@ def update_task_list():
         for i, task in enumerate(tasks, start=1):
             task_desc = task['task']
             priority_stars = '*' * min(max(task['priority'], 1), 5)
-            due_date_str = task['due_date'].strftime("%m-%d-%Y %H:%M") if isinstance(task['due_date'], datetime.datetime) else ""
-            tree.insert("", tk.END, values=(task_desc, priority_stars, due_date_str))
+            due_date_str = task['due_date'].strftime(
+                "%m-%d-%Y %H:%M") if isinstance(task['due_date'], datetime.datetime) else ""
+            tree.insert("", tk.END, values=(
+                task_desc, priority_stars, due_date_str))
     else:
-        tree.insert("", tk.END, values=("No tasks in your to-do list.", "", ""))
+        tree.insert("", tk.END, values=(
+            "No tasks in your to-do list.", "", ""))
 
 
 def add_task():
@@ -39,15 +42,17 @@ def add_task():
     task = entry_task.get().strip()
     priority = entry_priority.get().strip()
     due_date_str = entry_due_date.get().strip()
-    
+
     if not (task and priority and due_date_str):
         messagebox.showinfo("Error", "Please fill in all fields.")
         return
     if not priority.isdigit() or not (1 <= int(priority) <= 5):
-        messagebox.showinfo("Error", "Priority should be a number between 1 and 5.")
+        messagebox.showinfo(
+            "Error", "Priority should be a number between 1 and 5.")
         return
     if not isValidDateTimeFormat(due_date_str):
-        messagebox.showinfo("Error", "Invalid date format. Please use MM-DD-YYYY HH:MM.")
+        messagebox.showinfo(
+            "Error", "Invalid date format. Please use MM-DD-YYYY HH:MM.")
         return
     try:
         task_manager.add_task(task, int(priority), due_date_str)
@@ -96,7 +101,8 @@ def sort_column(column, reverse_flags):
     """
     Sorts the Treeview columns alphabetically when the column header is clicked.
     """
-    data = [(tree.set(child, column), child) for child in tree.get_children('')]
+    data = [(tree.set(child, column), child)
+            for child in tree.get_children('')]
     data.sort(reverse=reverse_flags[column])
     for index, (val, child) in enumerate(data):
         tree.move(child, '', index)
@@ -121,17 +127,22 @@ if __name__ == "__main__":
     entry_due_date.grid(row=2, column=1, padx=10, pady=5)
     button_add_task = tk.Button(root, text="Add Task", command=add_task)
     button_add_task.grid(row=3, column=0, columnspan=2, padx=10, pady=5)
-    tree = ttk.Treeview(root, columns=("Task", "Priority", "Due Date"), show="headings")
+    tree = ttk.Treeview(root, columns=(
+        "Task", "Priority", "Due Date"), show="headings")
     tree.heading("Task", text="Task", command=lambda: sort_column("Task"))
-    tree.heading("Priority", text="Priority", command=lambda: sort_column("Priority"))
-    tree.heading("Due Date", text="Due Date", command=lambda: sort_column("Due Date"))
+    tree.heading("Priority", text="Priority",
+                 command=lambda: sort_column("Priority"))
+    tree.heading("Due Date", text="Due Date",
+                 command=lambda: sort_column("Due Date"))
     tree.grid(row=4, column=0, columnspan=2, padx=10, pady=5)
     reverse_flags = {"Task": False, "Priority": False, "Due Date": False}
     for col in ("Task", "Priority", "Due Date"):
-        tree.heading(col, text=col, command=lambda c=col: sort_column(c, reverse_flags))
-    button_remove_task = tk.Button(root, text="Remove Task", command=remove_task)
+        tree.heading(
+            col, text=col, command=lambda c=col: sort_column(c, reverse_flags))
+    button_remove_task = tk.Button(
+        root, text="Remove Task", command=remove_task)
     button_remove_task.grid(row=5, column=0, columnspan=2, padx=10, pady=5)
-    
+
     task_manager = TaskManager()
     update_task_list()
 
