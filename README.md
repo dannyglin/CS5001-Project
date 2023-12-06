@@ -156,4 +156,4 @@ The biggest challenge for me was using tkinter, the interface built in Python. I
 Features I would like to add is to make a better looking interface amd probably have a way to save/load all the task when the application ends.
 
 ## Final Reflection
-I loved learning new features that this course has taught me. Having a basic foundation is critical in moving in the future courses
+I loved learning new features that this course has taught me. Having a basic foundation is critical in moving in the future courses. I look forward for classes like Object Oriented Programming/Data Structures/Algorithms.
