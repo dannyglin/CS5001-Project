@@ -18,28 +18,28 @@ Why?
 The reason for creating the To-Do List was to help people better organize their tasks and improve productivity by offering an easy-to-use tool for managing daily activities. This project aimed to simplify task management and aid in effective time organization, providing a straightforward solution for individuals seeking a more structured approach to handling their to-dos.
 
 ## Key Features
-User Interface: Built-in Python Interface (I thought it was really cool and learned that Python could have a Built-in Gui interface to use)
+User Interface: Built-in Python Interface (I thought it was cool and learned that Python could have a Built-in Gui interface to use)
 
-Sorting and Filtering: Within the gui there is a functionality that is group by different criteria. I added feature such as giving a number of stars to emphasize the importance and a due date on when the task should be finished.
+Sorting and Filtering: Within the GUI there is a functionality that is grouped by different criteria. I added features such as giving several stars to emphasize the importance and due date on when the task should be finished.
 
-Task Management: Options to edit, delete, and mark tasks as complete based on different criterias.
+Task Management: Options to edit, delete, and mark tasks as complete based on different criteria.
 
 ## Guide
 
-1. Clone the python code from this repository and run the application by opening your terminal
+1. Clone the Python code from this repository and run the application by opening your terminal
 
 ## Installation Instructions
 
 1. To run the application, be sure to be on the directory of the python files
-2. Load up the terminal or command prompt (I usually do it by deleting everything in the path and type in 'cmd')
+2. Load up the terminal or command prompt (I usually do it by deleting everything in the path and typing in 'cmd')
 3. Type in "python gui.py" (Here's how it looks on my screen, could be different from yours "C:\Users\Danny\OneDrive\repos\CS5001-Project>python gui.py")
-4. Interact with the gui
+4. Interact with the GUI
 
 ## Code Review
 
 ### gui.py
 
-The gui.py file is responsible for managing the graphical user interface (GUI) of a to-do list application using the tkinter library in Python. Within this file, essential functions include update_task_list(), which refreshes the displayed task list by communicating with the TaskManager class and updating the treeview widget with task details. Additionally, add_task() facilitates the addition of new tasks to the list, collecting input data from GUI fields, validating it, and using the TaskManager to add the task. Furthermore, remove_task() handles the removal of selected tasks from the list, identifying the chosen task in the GUI and utilizing the TaskManager to remove it. These functions interact with the TaskManager class in task_manager.py, enabling tasks-related operations within the GUI.
+The gui.py file is responsible for managing the graphical user interface (GUI) of a to-do list application using the Tkinter library in Python. Within this file, essential functions include update_task_list(), which refreshes the displayed task list by communicating with the TaskManager class and updating the treeview widget with task details. Additionally, add_task() facilitates the addition of new tasks to the list, collecting input data from GUI fields, validating it, and using the TaskManager to add the task. Furthermore, remove_task() handles the removal of selected tasks from the list, identifying the chosen task in the GUI and utilizing the TaskManager to remove it. These functions interact with the TaskManager class in task_manager.py, enabling tasks-related operations within the GUI.
 
 1. 
 ```python
@@ -152,17 +152,17 @@ Explanation: The remove_task method removes a task from the task list based on t
 Explanation: The get_tasks() method in the TaskManager class serves the purpose of allowing other parts of the code to retrieve the list of tasks stored within a TaskManager instance without directly accessing the underlying tasks attribute, promoting better code organization and encapsulation.
 
 ### Major Challenges
-The biggest challenge for me was using tkinter, the interface built in Python. It was a new concept built into python that I wanted to learn and have it's function with the python code was tough but relieving once it was finished!
+The biggest challenge for me was using Tkinter, the interface built in Python. It was a new concept built into Python that I wanted to learn and having its function with the Python code was tough but relieving once it was finished!
 
 
 ## Example Runs and Testing
- Here is a video of me running the gui and testing edge cases!
+ Here is a video of me running the GUI and testing edge cases!
  Link:
 
 [ https://youtu.be/jtDpeNJxbow](https://www.youtube.com/watch?v=0xa4ZSYFNH4)
 
 ## Missing Features / What's Next
-Features I would like to add is to make a better looking interface amd probably have a way to save/load all the task when the application ends.
+Features I would like to add is to make a better-looking interface and probably have a way to save/load all the task when the application ends.
 
 ## Final Reflection
 During this course, I've enjoyed exploring its features and learning new things with excitement. It's crucial to have a solid foundation for what's coming next. I've gained essential Python skills and I'm thrilled to use them in software engineering. I'm really looking forward to diving into Object Oriented Programming, Data Structures, and Algorithms in upcoming classes. They'll help me learn and grow even more.
