@@ -1,0 +1,94 @@
+"""
+Final Project Test File    
+=======================
+Course:   CS 5001
+Semester: FALL 2023
+Student:  Danny Lin
+
+To-Do-List Application Test File:
+"""
+
+1. Testing add_task() function in Task Manager
+Input:
+Task: "Complete Report"
+Priority: 3
+Due Date: "12-31-2023 18:00"
+
+Expected Output:
+The task "Complete Report" with priority 3 and due date "12-31-2023 18:00" should be added to the list.
+
+Output:
+The task "Complete Report" with priority 3 and due date "12-31-2023 18:00" should be added to the list.
+
+2. Testing remove_task_by_index() function in Task Manager
+Input:
+Remove a task at index 0
+
+Expected Output:
+The task at index 0 should be removed from the list.
+
+Output:
+The task at index 0 should be removed from the list.
+
+3. Testing get_tasks() function in Task Manager
+Input:
+Retrieving the list of tasks.
+
+Expected Output:
+An empty list if no tasks are added.
+
+Output:
+An empty list if no tasks are added.
+
+Additional Test Scenarios:
+4. Testing add_task() with Empty Task Description
+Input:
+Task: ""
+Priority: 4
+Due Date: "01-15-2024 10:30"
+
+Expected Output:
+No task added due to an empty task description.
+
+Output:
+No task added due to an empty task description.
+
+5. Testing add_task() with Invalid Date Format
+Input:
+Task: "Meeting"
+Priority: 2
+Due Date: "2023-12-31 18:00" (Invalid format)
+
+Expected Output:
+No task added due to an invalid date format.
+
+Output:
+No task added due to an invalid date format.
+
+6. Testing remove_task_by_index() with Non-Existing Task
+Input:
+Attempt to remove a task at index 1 (when no task exists at that index)
+
+Expected Output:
+No task removed, print "Invalid index for task removal."
+
+Output:
+No task removed, print "Invalid index for task removal."
+
+7. Testing get_tasks() After Additions
+Input:
+Add tasks:
+"Task 1", Priority: 2, Due Date: "01-31-2024 08:00"
+"Task 2", Priority: 4, Due Date: "02-15-2024 14:30"
+
+Expected Output:
+List containing two tasks.
+
+Output:
+List containing two tasks.
+
+
+
+
+
+
