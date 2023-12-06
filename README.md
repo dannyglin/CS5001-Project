@@ -101,8 +101,12 @@ Explanation: This function was used to verify the date when the user adds it to 
 def remove_task():
     selected_task = tree.selection()
     if selected_task:
-        task_manager.remove_task(int(selected_task[0]))
-        update_task_list()
+        try:
+            task_index = tree.index(selected_task[0])
+            task_manager.remove_task_by_index(task_index)
+            update_task_list()
+        except ValueError as e:
+            messagebox.showinfo("Error", f"Error removing task: {e}")
     else:
         messagebox.showinfo("Error", "Please select a task to remove.")
 ```
@@ -130,8 +134,11 @@ Explanation: The add_task method takes task details (task description, priority,
 
 3. 
 ```python
-    def remove_task(self, index):
-        del self.tasks[index]
+    def remove_task_by_index(self, index):
+            if 0 <= index < len(self.tasks):
+                del self.tasks[index]
+            else:
+                print(f"Invalid index '{index}' for task removal.")
 ```
 Explanation: The remove_task method removes a task from the task list based on the provided index. It uses Python's del statement to delete the task at the specified index from self.tasks.
 
@@ -156,4 +163,6 @@ The biggest challenge for me was using tkinter, the interface built in Python. I
 Features I would like to add is to make a better looking interface amd probably have a way to save/load all the task when the application ends.
 
 ## Final Reflection
-I loved learning new features that this course has taught me. Having a basic foundation is critical in moving in the future courses. I look forward for classes like Object Oriented Programming/Data Structures/Algorithms.
+During this course, I've enjoyed exploring its features and learning new things with excitement. It's crucial to have a solid foundation for what's coming next. I've gained essential Python skills and I'm thrilled to use them in software engineering. I'm really looking forward to diving into Object Oriented Programming, Data Structures, and Algorithms in upcoming classes. They'll help me learn and grow even more.
+
+This learning experience has been rewarding and got me excited about what's next. I can't wait to tackle Object Oriented Programming, understand Data Structures, and work on Algorithms. These classes will not only broaden my knowledge but also help me improve in this field.
