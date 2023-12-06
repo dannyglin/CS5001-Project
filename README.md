@@ -157,7 +157,7 @@ The biggest challenge for me was using tkinter, the interface built in Python. I
  Here is a video of me running the gui and testing edge cases!
  Link:
 
- https://youtu.be/jtDpeNJxbow
+[ https://youtu.be/jtDpeNJxbow](https://www.youtube.com/watch?v=0xa4ZSYFNH4)
 
 ## Missing Features / What's Next
 Features I would like to add is to make a better looking interface amd probably have a way to save/load all the task when the application ends.
