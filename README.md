@@ -19,7 +19,9 @@ The reason for creating the To-Do List was to help people better organize their 
 
 ## Key Features
 User Interface: Built-in Python Interface (I thought it was really cool and learned that Python could have a Built-in Gui interface to use)
+
 Sorting and Filtering: Within the gui there is a functionality that is group by different criteria. I added feature such as giving a number of stars to emphasize the importance and a due date on when the task should be finished.
+
 Task Management: Options to edit, delete, and mark tasks as complete based on different criterias.
 
 ## Guide
