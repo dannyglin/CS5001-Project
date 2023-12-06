@@ -1,9 +1,26 @@
+"""
+Final Project    
+=======================
+Course:   CS 5001
+Semester: FALL 2023
+Student:  Danny Lin
+
+To-Do-List Application:
+
+The To-Do List application simplifies task management by providing users with a convenient interface to add, organize, prioritize, and track tasks, ensuring efficient planning and completion of activities.
+It offers a user-friendly platform for individuals to systematically manage their daily, weekly, or long-term tasks, enhancing productivity and organization in both personal and professional contexts.
+"""
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 from task_manager import TaskManager
 import datetime
 
+
 def update_task_list():
+    """
+    Updates the displayed task list in the GUI based on the tasks retrieved from TaskManager.
+    """
     tree.delete(*tree.get_children())
     tasks = task_manager.get_tasks()
     if tasks:
@@ -17,9 +34,12 @@ def update_task_list():
 
 
 def add_task():
-    task = entry_task.get().strip()  # Remove leading/trailing spaces
+    """
+    Adds a new task to the task list based on user input.
+    """
+    task = entry_task.get().strip()
     priority = entry_priority.get().strip()
-    due_date_str = entry_due_date.get().strip()  # Remove leading/trailing spaces
+    due_date_str = entry_due_date.get().strip()
     
     if not (task and priority and due_date_str):
         messagebox.showinfo("Error", "Please fill in all fields.")
@@ -36,7 +56,6 @@ def add_task():
     try:
         task_manager.add_task(task, int(priority), due_date_str)
         update_task_list()
-        # Clear entry fields after successful addition
         entry_task.delete(0, tk.END)
         entry_priority.delete(0, tk.END)
         entry_due_date.delete(0, tk.END)
@@ -45,6 +64,15 @@ def add_task():
 
 
 def isValidDateTimeFormat(date_str):
+    """
+    Checks if the provided date string matches the specified date format.
+
+    Arguments:
+    date_str (str): The date string to be validated.
+
+    Returns:
+    bool: True if the date string is in the correct format, False otherwise.
+    """
     try:
         datetime.datetime.strptime(date_str, "%m-%d-%Y %H:%M")
         return True
@@ -53,6 +81,9 @@ def isValidDateTimeFormat(date_str):
 
 
 def remove_task():
+    """
+    Removes the selected task from the task list.
+    """
     selected_task = tree.selection()
     if selected_task:
         task_manager.remove_task(int(selected_task[0]))
